@@ -122,17 +122,23 @@ window.addEventListener('load', function () {
     if (!iframe) return;
 
     iframe.addEventListener('load', function () {
-    fitPublicationInsideIframe();
+        fitPublicationInsideIframe();
 
-		requestAnimationFrame(function () {
-			requestAnimationFrame(function () {
-				iframe.style.opacity = '1';
-			});
-		});
-	});
-	
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                iframe.style.opacity = '1';
+            });
+        });
+    });
+
     fitPublicationInsideIframe();
     showHideArrows();
+
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+            iframe.style.opacity = '1';
+        });
+    });
 });
 
 window.addEventListener('resize', fitPublicationInsideIframe);
